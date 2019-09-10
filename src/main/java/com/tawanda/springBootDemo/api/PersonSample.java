@@ -17,4 +17,9 @@ public class PersonSample implements PersonDao {
         return 1;
     }
 
+    @Override
+    public List<Person> returnAllPeople() {
+        return people;
+    }
+
 }
