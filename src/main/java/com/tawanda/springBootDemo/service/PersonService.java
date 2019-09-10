@@ -2,16 +2,17 @@ package com.tawanda.springBootDemo.service;
 
 import com.tawanda.springBootDemo.dao.PersonDao;
 import com.tawanda.springBootDemo.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
+@Service
 public class PersonService  {
 
     private final PersonDao personDao;
-
-    public PersonService(PersonDao personDao) {
+    @Autowired
+    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
         this.personDao = personDao;
     }
 
